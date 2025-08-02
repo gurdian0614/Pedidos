@@ -8,7 +8,12 @@ namespace Pedidos.Herencia
 
         public override void MostrarInformacion()
         {
-            base.MostrarInformacion();
+            Console.WriteLine();
+            Console.WriteLine("***** DATOS DEL PRODUCTO *****");
+            Console.WriteLine($"ID: {Id}");
+            Console.WriteLine($"Nombre: {Nombre}");
+            Console.WriteLine($"Precio: {Precio:C}");
+            Console.WriteLine($"Cantidad disponible: {Stock}");
             Console.WriteLine($"Garantía: {GarantiaMeses} meses");
             Console.WriteLine($"Voltaje: {Voltaje}");
         }
