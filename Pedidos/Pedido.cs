@@ -1,9 +1,10 @@
 ﻿
 using Pedidos.Herencia;
+using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace Pedidos
 {
-    public class Pedido
+    public class Pedido : IInformacionDetallada
     {
         public int Id { get; set; }
         public DateTime Fecha { get; set; }
@@ -36,8 +37,7 @@ namespace Pedidos
         public void MostrarDetalles()
         {
             Console.WriteLine("-----------------------------------------");
-            Console.WriteLine($"Detalles del Pedido #{Id}");
-            Console.WriteLine($"Fecha: {Fecha:dd/MM/yyyy HH:mm:ss}");
+            Console.WriteLine(ObtenerInformacionDetallada());
 
             foreach (var item in Items)
             {
@@ -48,5 +48,10 @@ namespace Pedidos
             Console.WriteLine();
         }
 
+        public string ObtenerInformacionDetallada()
+        {
+            return $"Detalles del Pedido #{Id}\n" +
+                   $"Fecha: {Fecha:dd/MM/yyyy HH:mm:ss}";
+        }
     }
 }
