@@ -11,9 +11,6 @@ namespace Pedidos.Herencia
             Console.WriteLine();
             Console.WriteLine("***** DATOS DEL PRODUCTO *****");
             Console.WriteLine(ObtenerInformacionDetallada());
-            Console.WriteLine($"Nombre: {Nombre}");
-            Console.WriteLine($"Precio: {Precio:C}");
-            Console.WriteLine($"Cantidad disponible: {Stock}");
             Console.WriteLine($"Garantía: {GarantiaMeses} meses");
             Console.WriteLine($"Voltaje: {Voltaje}");
         }
