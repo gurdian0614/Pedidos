@@ -8,7 +8,21 @@ namespace Pedidos
         public decimal Precio { get; set; }
         public int Stock { get; set; }
 
+        public Producto() { }
+
+        public Producto(int Id, string Nombre, decimal Precio)
+        {
+            this.Id = Id;
+            this.Nombre = Nombre;
+            this.Precio = Precio;
+            Stock = 0;
+        }
+
         public abstract void MostrarInformacion();
+
+        public abstract void MostrarInformacion(string Direccion);
+
+        public abstract void MostrarInformacion(string Direccion, string Dni);
 
         // Si el constructor no lleva parámetros, C# automáticamente lo crea por detrás
 

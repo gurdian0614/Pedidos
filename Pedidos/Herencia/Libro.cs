@@ -16,5 +16,28 @@ namespace Pedidos.Herencia
             Console.WriteLine($"Autor: {Autor}");
             Console.WriteLine($"Número de Páginas: {NumeroPaginas}");
         }
+
+        public override void MostrarInformacion(string Direccion)
+        {
+            Console.WriteLine();
+            Console.WriteLine("***** DATOS DEL PRODUCTO *****");
+            Console.WriteLine(ObtenerInformacionDetallada());
+            Console.WriteLine($"Dirección: {Direccion}");
+            Console.WriteLine($"ISBN: {ISBN}");
+            Console.WriteLine($"Autor: {Autor}");
+            Console.WriteLine($"Número de Páginas: {NumeroPaginas}");
+        }
+
+        public override void MostrarInformacion(string Direccion, string Dni)
+        {
+            Console.WriteLine();
+            Console.WriteLine("***** DATOS DEL PRODUCTO *****");
+            Console.WriteLine(ObtenerInformacionDetallada());
+            Console.WriteLine($"Dirección: {Direccion}");
+            Console.WriteLine($"Dni: {Dni}");
+            Console.WriteLine($"ISBN: {ISBN}");
+            Console.WriteLine($"Autor: {Autor}");
+            Console.WriteLine($"Número de Páginas: {NumeroPaginas}");
+        }
     }
 }
