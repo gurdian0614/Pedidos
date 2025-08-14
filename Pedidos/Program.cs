@@ -2,7 +2,7 @@
 using Pedidos;
 using Pedidos.Herencia;
 
-List<Producto> catalogo = new List<Producto>();
+Dictionary<int, Producto> catalogo = new Dictionary<int, Producto>();
 
 Electronico electronico = new Electronico();
 electronico.Id = 3;
@@ -11,7 +11,7 @@ electronico.Precio = 1000;
 electronico.Stock = 200;
 electronico.GarantiaMeses = 12;
 electronico.Voltaje = "110V";
-catalogo.Add(electronico);
+catalogo.Add(3, electronico);
 
 Libro libro = new Libro();
 libro.Id = 4;
@@ -21,7 +21,7 @@ libro.Stock = 1500;
 libro.ISBN = "9788845292613";
 libro.Autor = "J.R.R. Tolkien";
 libro.NumeroPaginas = 500;
-catalogo.Add(libro);
+catalogo.Add(4, libro);
 
 Libro libro1 = new Libro();
 libro1.Id = 5;
@@ -31,7 +31,7 @@ libro1.Stock = 1600;
 libro1.ISBN = "6070731743";
 libro1.Autor = "Dross";
 libro1.NumeroPaginas = 471;
-catalogo.Add(libro1);
+catalogo.Add(5, libro1);
 
 Pedido pedido = new Pedido(1);
 bool continuarPedido = true;
@@ -39,7 +39,7 @@ bool continuarPedido = true;
 while (continuarPedido)
 {
     Console.WriteLine("----------- Catálogo de Productos -----------");
-    foreach (Producto producto in catalogo)
+    foreach (Producto producto in catalogo.Values)
     {
         producto.MostrarInformacion();
     }
@@ -60,7 +60,7 @@ while (continuarPedido)
         Console.Write("Ingrese la cantidad: ");
         int cantidad = int.Parse(Console.ReadLine());
 
-        Producto productoSeleccionado = catalogo.FirstOrDefault(producto => producto.Id == id);
+        Producto productoSeleccionado = catalogo[id];
 
         if (productoSeleccionado == null)
         {
